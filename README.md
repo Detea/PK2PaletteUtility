@@ -10,4 +10,9 @@ This project uses Qt 6:
 https://www.qt.io/product/qt6
 
 # Build
-...soon
+This project uses [CMake](https://cmake.org/).
+
+`
+cmake .
+cmake --build . --config Release
+`
