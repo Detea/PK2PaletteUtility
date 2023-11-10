@@ -35,6 +35,6 @@ qt_add_executable(PaletteUtility
     ${PROJECT_SOURCE_DIR}/src/main.cpp
 )
 
-target_link_libraries(PaletteUtility PRIVATE Qt6::Core Qt6::Gui Qt6::Widgets)
+target_link_libraries(PaletteUtility PUBLIC Qt6::Core Qt6::Gui Qt6::Widgets)
 
 set_target_properties(PaletteUtility PROPERTIES WIN32_EXECUTABLE ON)
