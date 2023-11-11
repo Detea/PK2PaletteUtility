@@ -6,6 +6,7 @@
 #include <qimage.h>
 #include <qscrollarea.h>
 #include <qdesktopservices.h>
+#include <qicon.h>
 
 #include <filesystem>
 
@@ -35,6 +36,8 @@ void PK2PaletteUtility::setupUI() {
 
 	setMinimumSize(1024, 768);
 	setWindowTitle(WINDOW_TITLE.data());
+
+	setWindowIcon(QIcon(":pu_icon64x64.png"));
 }
 
 void PK2PaletteUtility::setupSlots() {
@@ -184,6 +187,8 @@ void PK2PaletteUtility::showAboutDialog() {
 	aboutText += "<hr />";
 	aboutText += "This project is open source:<br />";
 	aboutText += "<a href = \"https://github.com/Detea/PK2PaletteUtility\">https://github.com/Detea/PK2PaletteUtility</a></center>";
+	aboutText += "<hr />";
+	aboutText += "Application icon made by MAKYUNI";
 
 	QMessageBox mbAbout(this);
 	mbAbout.setWindowTitle("About");

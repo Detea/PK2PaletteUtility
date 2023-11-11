@@ -15,26 +15,31 @@ include_directories(${PROJECT_SOURCE_DIR}/src/ui)
 include_directories(${PROJECT_SOURCE_DIR}/src/undo)
 include_directories(${PROJECT_SOURCE_DIR}/src/utils)
 
+
 qt_add_executable(PaletteUtility
-    ${PROJECT_SOURCE_DIR}/src/colorchooser/ColorChooser.cpp
-    ${PROJECT_SOURCE_DIR}/src/colorchooser/ColorComponent.h
-    ${PROJECT_SOURCE_DIR}/src/colorchooser/ColorSelectionBar.cpp
+    src/colorchooser/ColorChooser.cpp
+    src/colorchooser/ColorComponent.h
+    src/colorchooser/ColorSelectionBar.cpp
 
-    ${PROJECT_SOURCE_DIR}/src/ui/ImageView.cpp
-    ${PROJECT_SOURCE_DIR}/src/ui/MainMenuBar.cpp
-    ${PROJECT_SOURCE_DIR}/src/ui/PaletteRenderer.cpp
-    ${PROJECT_SOURCE_DIR}/src/ui/PaletteViewWidget.cpp
-    ${PROJECT_SOURCE_DIR}/src/ui/PK2PaletteUtility.cpp
+    src/ui/ImageView.cpp
+    src/ui/MainMenuBar.cpp
+    src/ui/PaletteRenderer.cpp
+    src/ui/PaletteViewWidget.cpp
+    src/ui/PK2PaletteUtility.cpp
     
-    ${PROJECT_SOURCE_DIR}/src/undo/ColorsChangeCommand.cpp
-    ${PROJECT_SOURCE_DIR}/src/undo/UndoAction.h
+    src/undo/ColorsChangeCommand.cpp
+    src/undo/UndoAction.h
 
-    ${PROJECT_SOURCE_DIR}/src/utils/PaletteFileParser.cpp
-    ${PROJECT_SOURCE_DIR}/src/utils/PaletteUtils.h
+    src/utils/PaletteFileParser.cpp
+    src/utils/PaletteUtils.h
 
-    ${PROJECT_SOURCE_DIR}/src/main.cpp
+    res/resources.qrc
+    res/resources.rc
+
+    src/main.cpp
 )
 
-target_link_libraries(PaletteUtility PUBLIC Qt6::Core Qt6::Gui Qt6::Widgets)
-
+set_target_properties(PaletteUtility PROPERTIES AUTORCC ON)
 set_target_properties(PaletteUtility PROPERTIES WIN32_EXECUTABLE ON)
+
+target_link_libraries(PaletteUtility PUBLIC Qt6::Core Qt6::Gui Qt6::Widgets)

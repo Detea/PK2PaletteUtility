@@ -45,7 +45,7 @@ private slots:
 
 private:
     static constexpr std::string_view WINDOW_TITLE = "Pekka Kana 2 Palette Utility";
-    static constexpr std::string_view VERSION_STRING = "1.0";
+    static constexpr std::string_view VERSION_STRING = "1.0.1";
 
     ImageView imageView;
     PaletteViewWidget paletteView;
