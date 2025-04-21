@@ -183,7 +183,7 @@ void PK2PaletteUtility::showAboutDialog() {
 	QString aboutText = "<center><b>Pekka Kana 2 Palette Utility</b>";
 	aboutText += "<br />";
 	aboutText += "Version: ";
-	aboutText += VERSION_STRING;
+	aboutText += QString::fromUtf8(VERSION_STRING);
 	aboutText += "<hr />";
 	aboutText += "This project is open source:<br />";
 	aboutText += "<a href = \"https://github.com/Detea/PK2PaletteUtility\">https://github.com/Detea/PK2PaletteUtility</a></center>";
